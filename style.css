@@ -24,6 +24,8 @@ body {
     font-family: 'Barlow', sans-serif;
     background-size: 10px 30px;
     background-position: top right;
+    overflow-x: hidden;
+
 }
 
 h1,h2,a {
@@ -44,6 +46,8 @@ img {
     display: block;
     width: 100%;
 }
+
+/* ---------------------------------- UTILS --------------------------------- */
 
 .bg {
     background: var(--light-gray-blue);
@@ -67,7 +71,7 @@ nav {
     /* padding: 2rem 10rem; */
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     color: black;
     font-weight: 700;
     text-transform: uppercase;
@@ -92,11 +96,11 @@ nav {
 }
 
 .navbar .separation {
-    font-size: 3rem;
+    /* font-size: 3rem; */
 }
 
 #close-icon, #open-icon {
-    width: 2%;
+    width: 30px;
     display: none;
     cursor: pointer;
 }
@@ -109,6 +113,10 @@ main {
     /* justify-content: space-between; */
     align-items: center;
     flex: 1;
+}
+
+main .heading {
+    width: 100%;
 }
 
 main h2 {
@@ -151,6 +159,7 @@ main .links {
     align-items: center;
     font-size: 1rem;
     
+    
 }
 
 main .btn {
@@ -172,10 +181,122 @@ main .preview {
 
 main .illustration {
     position: relative;
-    left: 100px;
+    left: 50px;
     /* width: 150%; */
 }
 
 main .illustration img {
     width: 140%;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                MEDIA QUERIES                               */
+/* -------------------------------------------------------------------------- */
+@media screen and (max-width: 1225px) {
+    .container {
+        max-width: 900px;
+    }
+
+    main h1 {
+        font-size: 3rem;
+    }
+
+    main .illustration {
+        left: 50px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .container {
+        max-width: 700px;
+    }
+
+    main p {
+        width: 100%;
+    }
+
+    main .links {
+        width: 130%;
+    }
+
+    main .illustration {
+        left: 100px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 23px;
+    }
+    .bg {
+        height: 68vh;
+    }
+    .container {
+        max-width: 400px;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        margin: 0 30px;
+        align-items: center;
+        background-color: white;
+        z-index: 60000;
+        text-align: center;
+        padding: 15px;
+        box-shadow: -4px 3px 22px -7px rgba(0,0,0,0.56);
+        border-radius: 5px;
+    }
+
+    .active {
+        display: flex;
+    }
+
+    .navbar li {
+        margin-top: 20px;
+        margin-right: initial;
+    }
+
+    #open-icon {
+        display: initial;
+    }
+
+    main {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    main .illustration {
+        left: 0px;
+        margin-bottom: 70px;
+    }
+
+    main .links {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .container {
+        max-width: 300px;
+    }
+
+    main h1 {
+        font-size: 2.5rem;
+    }
+
+    main .btn  {
+        font-size: 1rem;
+        width: 55%;
+    }
+
+    main .preview {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
 }
