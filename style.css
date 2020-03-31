@@ -25,9 +25,11 @@ body {
     background-size: 10px 30px;
     background-position: top right;
     overflow-x: hidden;
-
 }
 
+.overflow {
+    overflow-x: hidden;
+}
 h1,h2,a {
     font-family: 'Barlow Condensed', sans-serif;
 }
